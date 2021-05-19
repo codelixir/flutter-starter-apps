@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'package:meetup/services/appstate.dart';
 import 'package:meetup/screens/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ApplicationState(),
+      builder: (context, _) => MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

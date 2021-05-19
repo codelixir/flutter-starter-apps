@@ -5,4 +5,8 @@ as a part of [Google I/O 2021](https://events.google.com/io/).
 
 ## About the App
 
-
+Note that you need to install a config file from your Firebase project if you wish to try this out since I have not included that file in git. The file is supposed to be at the path
+```
+android/app/google-services.json
+```
+for android. For iOS you need to set-up the config file using XCode.
