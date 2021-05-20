@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:meetup/screens/chat.dart';
 import 'package:provider/provider.dart';
 
-import 'package:meetup/widgets/widgets.dart';
-import 'package:meetup/widgets/guestbook.dart';
 import 'package:meetup/services/authentication.dart';
 import 'package:meetup/services/appstate.dart';
+import 'package:meetup/widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -15,14 +13,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Firebase Meetup'),
+        title: Text('My Meetup'),
       ),
       body: ListView(
         children: <Widget>[
           Image.asset('assets/images/header.png'),
           SizedBox(height: 8),
-          IconAndDetail(Icons.calendar_today, 'October 30'),
-          IconAndDetail(Icons.location_city, 'San Francisco'),
+          IconAndDetail(Icons.calendar_today, 'September 5'),
+          IconAndDetail(Icons.location_city, 'Kurukshetra'),
           Consumer<ApplicationState>(
             builder: (context, appState, _) => Authentication(
               email: appState.email,
@@ -44,24 +42,16 @@ class HomePage extends StatelessWidget {
           ),
           Header("What we'll be doing"),
           Paragraph(
-            'Join us for a day full of Firebase Workshops and Tacos!',
-          ),
-          Consumer<ApplicationState>(
-            builder: (context, appState, _) => Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                if (appState.loginState == ApplicationLoginState.loggedIn) ...[
-                  Header('Discussion'),
-                  GuestBook(
-                    addMessage: (String message) =>
-                        appState.addMessageToGuestBook(message),
-                    messages: appState.guestBookMessages,
-                  ),
-                ],
-              ],
-            ),
+            'IDK, probably just attedning online college.',
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.chat),
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => DiscussionPage()));
+        },
       ),
     );
   }

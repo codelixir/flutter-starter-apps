@@ -1,13 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:provider/provider.dart';
 
 import 'package:meetup/widgets/widgets.dart';
-import 'package:meetup/services/authentication.dart';
-import 'package:meetup/services/appstate.dart';
 
 class GuestBookMessage {
   GuestBookMessage({required this.name, required this.message});
