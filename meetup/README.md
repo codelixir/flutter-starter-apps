@@ -7,6 +7,8 @@ as a part of [Google I/O 2021](https://events.google.com/io/).
 
 The app has a very basic interface which lets you RSVP to an event after you sign in/sign up via e-mail. Once signed in, you can have an open discussion with everyone who has signed in. You can select whether or not you are attending the event, and the number of tentative attendees will be displayed on the discussion page.
 
+The app uses Firebase Auth for user authentication, and Cloud Firestore as the database. I also published appropriate security settings in my Firebase project to control which user can access what document in the Firestore, and under what conditions.
+
 Note that you need to install a config file from your Firebase project if you wish to try this out since I have not included that file in git. The file is supposed to be at the path
 ```
 android/app/google-services.json
