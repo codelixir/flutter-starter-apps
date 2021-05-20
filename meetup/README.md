@@ -9,4 +9,4 @@ Note that you need to install a config file from your Firebase project if you wi
 ```
 android/app/google-services.json
 ```
-for android. For iOS you need to set-up the config file using XCode.
+for android. For iOS you need to set-up the config file using XCode, and for Web you have to make appropriate changes in `index.html`
